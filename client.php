@@ -4,11 +4,11 @@ try{
     $opciones = array(
         'location'=>'http://localhost/ws_soap/server.php',
         'uri'=>'urn:departamento',
-        'trace'=> true
+        'trace' => true
     );
 
     $client = new SoapClient(null,$opciones);
-    $if(isset($_GET["idz"])){
+    if(isset($_GET["idz"])){
         $idz = intval($_GET["idz"]);
         if($idz > 0){
             $respuestas = $client->obtenerDepartamentosPorZona($idz);
